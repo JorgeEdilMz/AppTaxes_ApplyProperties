@@ -143,9 +143,6 @@ public class Tax {
 
     public double consultPropertyTax(long cadastralNumber, boolean promptPayment, boolean exempt){
         double initSettlement = this.getInitialSettlement(cadastralNumber);
-        System.out.println(initSettlement);
-        System.out.println(applyDiscountExempt(initSettlement,exempt));
-        System.out.println(applyDiscountPromptPayment(initSettlement,promptPayment));
         return initSettlement-applyDiscountExempt(initSettlement,exempt)- applyDiscountPromptPayment(initSettlement,promptPayment);
     }
 
