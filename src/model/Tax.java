@@ -165,22 +165,22 @@ public class Tax {
         Property property = this.searchProperty(cadastralNumber);
         switch (property.getStratum()){
             case STRATUM1:
-                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum1())/rRanges.get(Stratum.STRATUM1.ordinal()).getValueIndicator();
+                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum1())/rRanges.get(0).VALUE_INDICATOR;
                 break;
             case STRATUM2:
-                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum2())/rRanges.get(Stratum.STRATUM2.ordinal()).getValueIndicator();
+                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum2())/rRanges.get(0).VALUE_INDICATOR;
                 break;
             case STRATUM3:
-                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum3())/rRanges.get(Stratum.STRATUM3.ordinal()).getValueIndicator();
+                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum3())/rRanges.get(0).VALUE_INDICATOR;
                 break;
             case STRATUM4:
-                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum4())/rRanges.get(Stratum.STRATUM4.ordinal()).getValueIndicator();
+                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum4())/rRanges.get(0).VALUE_INDICATOR;
                 break;
             case STRATUM5:
-                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum5())/rRanges.get(Stratum.STRATUM5.ordinal()).getValueIndicator();
+                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum5())/rRanges.get(0).VALUE_INDICATOR;
                 break;
             case STRATUM6:
-                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum6())/rRanges.get(Stratum.STRATUM6.ordinal()).getValueIndicator();
+                stratumRate = (property.getAppraisal()* rRanges.get(0).getRateStratum6())/rRanges.get(0).VALUE_INDICATOR;
                 break;
         }
         return stratumRate;

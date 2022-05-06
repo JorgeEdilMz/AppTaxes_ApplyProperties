@@ -137,6 +137,10 @@ public class Presenter {
                 case 5:
                     stratum = Stratum.STRATUM5;
                     break;
+                case 6:
+                    stratum = Stratum.STRATUM6;
+                    break;
+
             }
         return stratum;
     }
@@ -260,8 +264,8 @@ public class Presenter {
     }
 
     private void modifyRangeCommercial() throws IOException {
-        byte indicator = io.readByteGraphics("enter the indicator to modify"); //1,2 list
-        byte modifier = io.showModifyRangeMenu(); // initValue
+        byte indicator = io.readByteGraphics("enter the indicator to modify");
+        byte modifier = io.showModifyRangeMenu();
         switch (modifier){
             case 1:
                 io.showGraphicMessage("Actually initial value: " + tax.getcRanges().get(indicator).getInitValue());
@@ -273,8 +277,7 @@ public class Presenter {
                 io.showGraphicMessage("Actually rate: " + tax.getcRanges().get(indicator).getRate());
                 break;
         }
-        double newValue = io.readIntGraphics("Enter new value for indicator " + indicator);//new Rate
-        ///=tax.modifyCommercialRange(indicator,modifier,rate);
+        double newValue = io.readIntGraphics("Enter new value for indicator " + indicator);
 
         switch (modifier){
             case 1:
@@ -349,26 +352,25 @@ public class Presenter {
         Stratum stratum = this.showMenuStratum();
         switch (stratum){
             case STRATUM1:
-                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(stratum.getIndicator()-1).getRateStratum1());
+                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(0).getRateStratum1());
                 break;
             case STRATUM2:
-                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(stratum.getIndicator()-1).getRateStratum2());
+                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(0).getRateStratum2());
                 break;
             case STRATUM3:
-                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(stratum.getIndicator()-1).getRateStratum3());
+                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(0).getRateStratum3());
                 break;
             case STRATUM4:
-                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(stratum.getIndicator()-1).getRateStratum4());
+                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(0).getRateStratum4());
                 break;
             case STRATUM5:
-                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(stratum.getIndicator()-1).getRateStratum5());
+                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(0).getRateStratum5());
                 break;
             case STRATUM6:
-                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(stratum.getIndicator()-1).getRateStratum6());
+                io.showGraphicMessage("Actually rate: " + tax.getrRanges().get(0).getRateStratum6());
                 break;
         }
         double newRate = io.readIntGraphics("Enter new Rate for stratum " + stratum.getIndicator() );
-        //tax.modifyResidentialRate(stratum,newRate);
         modifyRateResidential(stratum,newRate);
         io.showGraphicMessage("Successfully modified!");
     }
